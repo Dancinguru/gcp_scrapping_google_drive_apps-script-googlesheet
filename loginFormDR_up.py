@@ -5,8 +5,8 @@ from datetime import datetime, timedelta
 import csv
 from io import StringIO
 
-eamil = my_email
-password = my_password
+eamil = "admin@oregonfirstresponderevals.com"
+password = "Packets66!"
 
 backend_base_url = "https://prod-api.formdr.com"
 

@@ -9,9 +9,7 @@ from PIL import Image
 from io import BytesIO
 from selenium.webdriver.chrome.options import Options
 
-screenshot_path = "D:\screenshot\screenshot.png"
-screenshot_path1 = "D:\screenshot\s.png"
-screenshot_path2 = "D:\screenshot\s1.png"
+screenshot_path = ".\screenshot.png"
 
 def login():
     # Set Chrome options to start the browser in full screen mode
@@ -31,8 +29,8 @@ def login():
     username_input = driver.find_element("name", "email")
     password_input = driver.find_element("name", "password")
 
-    username_input.send_keys(my_email)
-    password_input.send_keys(my_password)
+    username_input.send_keys("admin@oregonfirstresponderevals.com")
+    password_input.send_keys("Packets66!")
 
     # Submit the login form
     password_input.send_keys(Keys.RETURN)
@@ -136,11 +134,12 @@ def screenshot_signature(driver, candidate_name):
         # signature_screenshot.save(element_screenshot_bytes, format='PNG')
         # element_screenshot_bytes.seek(0)  # Reset the BytesIO cursor to the beginning
         driver.quit()
+        return screenshot_path
         # return element_screenshot_bytes.read()
     else:
         
         driver.quit()
-        # return None
+        return None
 
 # Close the browser
 

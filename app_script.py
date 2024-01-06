@@ -26,8 +26,8 @@ SCOPES = [
     "https://www.googleapis.com/auth/spreadsheets"
   ]
 
-def run(sheet_id, new_candidate_folder_id, file_name):
-  report_script_id = "AKfycbxZxznCMkmKPmha4LHl1dWeRFEJYyHa24ATKziszZhnF7jJjYyX81sMZGjOLLEB8aca"
+def run(sheet_id, new_candidate_folder_id, invoice_folder_id, file_name):
+  report_script_id = "AKfycby_9WWdJezzPu3AMtm9PY7sqbnqE8PGgLokikdo9YiWyIwwrQ61bXAUSLL0xcd1-t8I"
   invoice_script_id = "AKfycbzj39vYemyuDuQDdqLjpVmbHpjUR3kIN7e9_HIJU6fQ0DqJFAmPaGEgixTxjdsMH-IDxA"
   app_script_function_name = "createNewGoogleDocs"
   
@@ -66,10 +66,10 @@ def run(sheet_id, new_candidate_folder_id, file_name):
       print(f"Error: {report_response['error']['message']}")
     else:
       print(f"Success: {report_response['response']}")
-      
+
     invoice_request = {
       'function': app_script_function_name,  # Replace with the name of your function
-      'parameters':[sheet_id, new_candidate_folder_id],
+      'parameters':[sheet_id, invoice_folder_id],
       'devMode': False
     }
     invoice_response = service.scripts().run(scriptId=invoice_script_id, body=invoice_request).execute()
