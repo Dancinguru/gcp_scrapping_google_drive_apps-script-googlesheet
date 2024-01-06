@@ -12,4 +12,3 @@ def find_pdf_by_name(service, folder_id, start_name):
             print(f"{item['name']} ({item['id']})")
 
     return items
-
